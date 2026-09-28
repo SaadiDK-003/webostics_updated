@@ -1,0 +1,42 @@
+# Private environment configuration; safe example files may be committed.
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Composer dependencies are restored with composer install.
+# Keep composer.json and composer.lock in Git.
+/vendor/
+/composer.phar
+
+# Local backups, browser profiles, caches, screenshots and test results.
+/storage/
+
+# Optional certificate bundles downloaded during local diagnostics.
+# Production uses its host's maintained certificate store by default.
+/app/certs/
+*.key
+*.p12
+*.pfx
+
+# Local agent/editor settings.
+/.codex/
+/.agents/
+/.idea/
+/.vscode/
+
+# Logs, temporary files and editor backups.
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
