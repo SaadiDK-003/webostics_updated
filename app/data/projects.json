@@ -410,5 +410,33 @@
     "source": "storage/original/index.php",
     "publicationNote": "User confirmed publication as Saad’s work on 2026-09-28.",
     "linkNote": "Original portfolio destination; current live design may differ."
+  },
+  {
+    "slug": "school-van-tracking",
+    "title": "School Van Tracking",
+    "category": "mobile",
+    "summary": "An Android app for following a school van's location and receiving pickup and drop-off notifications. Developed by Saad Ahmad and published on Google Play.",
+    "technology": [
+      "Android",
+      "React Native",
+      "Laravel",
+      "Next.js"
+    ],
+    "monogram": "SVT",
+    "attribution": "Saad Ahmad",
+    "url": "https://play.google.com/store/apps/details?id=com.svt.driver",
+    "linkLabel": "View on Google Play",
+    "image": null,
+    "imageWidth": null,
+    "imageHeight": null,
+    "problem": null,
+    "solution": null,
+    "results": null,
+    "features": [],
+    "published": true,
+    "featured": false,
+    "source": "https://play.google.com/store/apps/details?id=com.svt.driver",
+    "publicationNote": "Owner confirmed this app as his work on 2026-09-30. Title and functionality checked against the public Google Play listing. Publisher displayed as Devteampro; no publisher ownership claim is made. Owner confirmed React Native, Laravel backend and Next.js.",
+    "linkNote": "The current app may differ from its original release."
   }
 ]

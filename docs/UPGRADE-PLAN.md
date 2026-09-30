@@ -143,3 +143,11 @@ Final local mobile Lighthouse for the drawer/typography update: performance 96, 
 - Local update; upload when ready along with the drawer, typography and previous portfolio changes.
 
 Verification for the platform/skills update: all 531 checks passed across 60 local pages, including both new services at 320-1440px. Both inquiry forms preselect their service correctly, both canonical URLs are correct, and both pages appear in the sitemap. Release PHP syntax checks passed. Latest package: storage/releases/webostics-20260930-145816-fd8bf4.zip. No emails sent and no production deployment performed.
+
+## Mobile application offering - 30 September 2026
+
+- [x] Add Mobile App Development to the homepage and a dedicated service page, retaining E-Commerce Development and the separate Web Applications route.
+- [x] Add the owner-confirmed School Van Tracking app with React Native, Laravel backend and Next.js to the portfolio.
+- [x] Add a Mobile Apps portfolio filter and update About with the published Android work.
+- [ ] Publish these local changes through the owner's Git deployment when ready. No Composer dependencies changed.
+- Other locally developed apps await details from the owner; no iOS release or unknown framework claims are made.

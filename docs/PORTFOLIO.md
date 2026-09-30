@@ -48,3 +48,12 @@ All 468 automated checks passed across 55 pages. The added checks cover all 16 r
 Saad confirmed full website development for Co-Museum only. Its dedicated page combines that confirmed role with the existing approved portfolio description: Figma-to-Liquid, reusable sections and responsive layout. No business metrics, design ownership, delivery date or testimonial is asserted. Tacoma Force and Transpire Technologies remain unchanged. The current-site screenshot retains its capture date and change-since-delivery notice.
 
 New route: /projects/co-museum. Linked from the Co-Museum homepage/gallery card and included in the sitemap. This local addition requires a new upload.
+
+## Published Android project - 30 September 2026
+
+Owner confirmed School Van Tracking (com.svt.driver) as his work and identified React Native, a Laravel backend and Next.js as its stack. The public Play Store page was fetched and its title, Android platform and short feature description checked. It lists Devteampro as publisher; the portfolio credits development to Saad without asserting publisher ownership. No ratings, download counts or unverified app results are published. The app was not installed or functionally tested.
+
+- Added a Mobile Apps gallery filter and a School Van Tracking card linking directly to Google Play.
+- Added /services/mobile-app-development and its homepage card, focusing on Android work with the confirmed stack.
+- Updated About and portfolio metadata to cover mobile work; other unpublished apps await details from Saad.
+- Source: https://play.google.com/store/apps/details?id=com.svt.driver .

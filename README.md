@@ -20,6 +20,22 @@ Pages can be viewed without mail credentials. The form reports an unavailable st
 
 ## Deploy to shared hosting
 
+### Deploy using Git
+
+Git contains the application source and composer.lock, but not vendor/ or the private .env. After pulling the source on the live host, install the locked dependencies in the same directory as index.php:
+
+```bash
+cd /home/saadigamers/public_html
+composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
+composer check-platform-reqs --no-dev
+```
+
+Run these dependency checks as part of each Git deployment, using a CLI PHP version compatible with the site's PHP runtime. Preserve the existing production .env. Do not use composer update as a deployment step: install uses the committed lock file.
+
+If Composer or terminal access is unavailable, extract the complete vendor/ directory from the latest matching release ZIP into public_html/vendor/. Upload all its contents, not just autoload.php. A missing vendor/autoload.php means the dependency installation is absent or incomplete; a normal git pull does not itself delete an existing ignored vendor directory.
+
+### Deploy using a release ZIP
+
 You can either clone/upload the source and run Composer on the host, or prepare a ZIP locally when the host does not provide Composer:
 
 ```powershell
