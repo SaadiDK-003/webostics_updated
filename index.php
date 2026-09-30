@@ -34,7 +34,7 @@ if ($route !== '' && $page[2] !== '404') {
  $schema['@graph'][] = ['@type'=>'BreadcrumbList','itemListElement'=>$crumbs];
 }
 if ($page[2] === 'service') $schema['@graph'][]=['@type'=>'Service','name'=>$services[$slug][0],'description'=>$services[$slug][3],'url'=>canonical($route),'provider'=>['@id'=>canonical().'#organization']];
-if ($page[2] === 'lesson') $schema['@graph'][]=['@type'=>'LearningResource','name'=>'Your First HTML Page','description'=>$page[1],'url'=>canonical($route),'learningResourceType'=>'Practice lesson','educationalLevel'=>'Beginner','isAccessibleForFree'=>true,'inLanguage'=>'en','publisher'=>['@id'=>canonical().'#organization']];
+if ($page[2] === 'lesson') $schema['@graph'][]=['@type'=>'LearningResource','name'=>explode(' | ', $page[0])[0],'description'=>$page[1],'url'=>canonical($route),'learningResourceType'=>'Practice lesson','educationalLevel'=>'Beginner','isAccessibleForFree'=>true,'inLanguage'=>'en','publisher'=>['@id'=>canonical().'#organization']];
 require __DIR__ . '/app/views/header.php';
 if ($page[2] === 'home') require __DIR__ . '/app/views/home.php';
 else require __DIR__ . '/app/views/pages.php';

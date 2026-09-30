@@ -42,3 +42,9 @@ Do not rerun `storage/import-projects.mjs` after editorial changes: it is the on
 ## Verification — 28 September 2026
 
 All 468 automated checks passed across 55 pages. The added checks cover all 16 records, each platform filter, three featured projects, attribution, removal of the historical preview query, filtering with JavaScript disabled, and header/gallery overflow at 320, 375, 430, 768, 900, 901, 950, 1024 and 1440 px. Production-host behavior was simulated locally: the gallery is indexable, filtered pages are noindex, and the sitemap includes the gallery. Desktop/mobile screenshots were visually reviewed. All PHP files passed syntax checks. No emails were sent or production files deployed.
+
+## Co-Museum scope confirmation - 30 September 2026
+
+Saad confirmed full website development for Co-Museum only. Its dedicated page combines that confirmed role with the existing approved portfolio description: Figma-to-Liquid, reusable sections and responsive layout. No business metrics, design ownership, delivery date or testimonial is asserted. Tacoma Force and Transpire Technologies remain unchanged. The current-site screenshot retains its capture date and change-since-delivery notice.
+
+New route: /projects/co-museum. Linked from the Co-Museum homepage/gallery card and included in the sitemap. This local addition requires a new upload.

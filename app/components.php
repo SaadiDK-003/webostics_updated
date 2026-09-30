@@ -34,7 +34,8 @@ function projectCard(array $project): void {
       <div class="project-body"><?php if (!empty($project['imageCaption'])): ?><p class="project-capture-note"><?= e($project['imageCaption']) ?></p><?php endif ?><span class="project-attribution">Work by <?= e($project['attribution']) ?></span><h3><?= e($project['title']) ?></h3><p><?= e($project['summary']) ?></p>
         <?php if (!empty($project['problem'])): ?><details class="project-details"><summary>Project context</summary><p><?= e($project['problem']) ?></p><?php if (!empty($project['solution'])): ?><p><?= e($project['solution']) ?></p><?php endif ?><?php if (!empty($project['results'])): ?><p><?= e($project['results']) ?></p><?php endif ?></details><?php endif ?>
         <div class="tags"><?php foreach ($project['technology'] as $tech): ?><span><?= e($tech) ?></span><?php endforeach ?></div>
-        <?php if (!empty($project['url']) && preg_match('~^https?://~i',$project['url'])): ?><a class="text-link" href="<?= e($project['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Visit <?= e($project['title']) ?> (opens in a new tab)">Visit website <span aria-hidden="true">↗</span></a><?php endif ?>
+        <?php if (!empty($project['detailPage'])): ?><a class="text-link" href="<?= e(url($project['detailPage'])) ?>" aria-label="View project: <?= e($project['title']) ?>">View project <span aria-hidden="true">&#8599;</span></a><?php endif ?>
+        <?php if (!empty($project['url']) && preg_match('~^https?://~i',$project['url'])): ?><a class="text-link" href="<?= e($project['url']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Visit website: <?= e($project['title']) ?> (opens in a new tab)">Visit website <span aria-hidden="true">↗</span></a><?php endif ?>
       </div>
     </article>
     <?php

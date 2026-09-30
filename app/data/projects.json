@@ -10,7 +10,7 @@
     ],
     "monogram": "RX",
     "attribution": "Saad Ahmad",
-    "url": "https://rxnicotine.com/products/rxnicotine?variant=45588137082982",
+    "url": "https://rxnicotine.com/",
     "image": null,
     "imageWidth": null,
     "imageHeight": null,
@@ -253,7 +253,10 @@
     "linkNote": "Original portfolio destination; current live design may differ.",
     "imageCaption": "Current website · captured 28 Sep 2026",
     "imageSource": "https://co-museum.shop/",
-    "imageCapturedAt": "2026-09-28"
+    "imageCapturedAt": "2026-09-28",
+    "role": "Full website development",
+    "detailPage": "projects/co-museum",
+    "scopeConfirmedAt": "2026-09-30"
   },
   {
     "slug": "red-beard-sailing",

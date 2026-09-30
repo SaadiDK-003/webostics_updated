@@ -5,7 +5,14 @@ DirectoryIndex index.php
 </FilesMatch>
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule ^(?:app|storage|docs|vendor)(?:/|$) - [F,L]
+# Canonical production hostname; localhost remains unaffected.
+RewriteCond %{HTTP_HOST} ^www\.webostics\.com$ [NC]
+RewriteRule ^ https://webostics.com%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^webostics\.com$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+RewriteRule ^ https://webostics.com%{REQUEST_URI} [R=301,L,NE]
+RewriteRule ^(?:app|storage|docs|vendor|scripts)(?:/|$) - [F,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L]
@@ -18,12 +25,13 @@ ExpiresActive On
 ExpiresByType text/css "access plus 7 days"
 ExpiresByType application/javascript "access plus 7 days"
 ExpiresByType image/svg+xml "access plus 30 days"
+ExpiresByType font/woff2 "access plus 30 days"
 </IfModule>
 <IfModule mod_headers.c>
 Header always set X-Content-Type-Options "nosniff"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set X-Frame-Options "SAMEORIGIN"
-<FilesMatch "\.(css|js|svg|png|webp|avif)$">
+<FilesMatch "\.(css|js|svg|png|webp|avif|woff2)$">
 Header set Cache-Control "public, max-age=604800"
 </FilesMatch>
 </IfModule>
