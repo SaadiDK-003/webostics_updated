@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
 <?php if (in_array($page[2], ['home', 'projects', 'project'], true)): ?><link rel="stylesheet" href="<?= e(asset('css/projects.css')) ?>"><?php endif ?>
 <?php if ($page[2] === 'lesson'): ?><link rel="stylesheet" href="<?= e(asset('css/lesson.css')) ?>"><?php endif ?>
+<?php if ($page[2] === 'pricing'): ?><link rel="stylesheet" href="<?= e(asset('css/pricing.css')) ?>"><?php endif ?>
 <script src="<?= e(asset('js/script.js')) ?>" defer></script>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP) ?></script>
 </head>
@@ -38,7 +39,7 @@
 <div class="navigation-shell" id="navigation-drawer" tabindex="-1">
 <div class="drawer-heading"><span id="drawer-title">Explore Webostics</span><button class="menu-close" type="button" aria-label="Close menu">Close <span aria-hidden="true">&#215;</span></button></div>
 <nav class="navigation" id="navigation" aria-label="Main navigation">
-<?php foreach (['services'=>'Services','courses'=>'Courses','ai'=>'AI','devops'=>'DevOps','projects'=>'Projects','resources'=>'Resources','about'=>'About'] as $path=>$label): ?><a href="<?= e(url($path)) ?>" <?= ($route===$path || str_starts_with($route,$path.'/')) ? 'aria-current="page"' : '' ?>><?= e($label) ?></a><?php endforeach ?>
+<?php foreach (['services'=>'Services','pricing'=>'Pricing','courses'=>'Courses','ai'=>'AI','devops'=>'DevOps','projects'=>'Projects','resources'=>'Resources','about'=>'About'] as $path=>$label): ?><a href="<?= e(url($path)) ?>" <?= ($route===$path || str_starts_with($route,$path.'/')) ? 'aria-current="page"' : '' ?>><?= e($label) ?></a><?php endforeach ?>
 <a class="nav-hire" href="<?= e(url('contact?type=service')) ?>">Hire Webostics <span aria-hidden="true">↗</span></a>
 </nav></div></div></header>
 <main id="main">

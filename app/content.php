@@ -74,7 +74,9 @@ $resources = [
   ['Treat the output as a draft','Check factual claims against reliable source material. Run and review generated code in an appropriate test environment. Look for invented details, missing edge cases and assumptions that were never agreed.'],
   ['Keep a person responsible','For actions that send messages, publish content or change systems, define a review step. Record what worked, what failed and what needs a fallback before expanding the workflow.']]],
 ];
+require __DIR__.'/pricing.php';
 $pages = [
+ 'pricing'=>['Website Development Pricing | Shopify & WordPress | Webostics','Shopify and WordPress development plans from PKR 15,000. Compare starting prices, estimated timelines, add-ons, revisions and payment terms. Request a scoped quote.','pricing'],
  ''=>['Build. Learn. Launch. | Webostics','Web development, e-commerce, practical technology learning, AI and deployment. Build with Webostics or explore your next learning path.','home'],
  'services'=>['Web Development & E-Commerce Services | Webostics','Explore website, Shopify, WordPress, application, automation and deployment services. Tell Webostics what you need to build.','services'],
  'courses'=>['Practical Technology Learning Paths | Webostics','Explore planned courses in web development, WordPress, Shopify, AI and DevOps. See course outlines and ask about availability.','courses'],

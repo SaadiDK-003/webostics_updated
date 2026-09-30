@@ -8,6 +8,13 @@ $inquiryType = posted('inquiry_type', $page[2]==='service' ? 'service' : $queryT
 if (!in_array($inquiryType,['service','course','general'],true)) $inquiryType='service';
 $queryTopic = is_string($_GET['topic'] ?? null) ? $_GET['topic'] : '';
 $topic = posted('topic',$page[2]==='service' ? $slug : $queryTopic);
+$pricingMessage = '';
+$queryPlan = is_string($_GET['plan'] ?? null) ? $_GET['plan'] : '';
+if ($inquiryType === 'service' && isset($pricingPlans[$queryPlan]) && $pricingPlans[$queryPlan]['topic'] === $topic) {
+ $selectedPlan = $pricingPlans[$queryPlan];
+ $platformLabel = $pricingGroups[$selectedPlan['platform']]['title'];
+ $pricingMessage = 'I would like a quote for '.$platformLabel.' - '.$selectedPlan['name'].' (starting from PKR '.number_format($selectedPlan['price']).'). Please confirm the scope and final price.';
+}
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') return;
 
 $statusCode=422; $success=false;

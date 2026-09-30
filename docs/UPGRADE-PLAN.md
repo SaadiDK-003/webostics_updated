@@ -151,3 +151,11 @@ Verification for the platform/skills update: all 531 checks passed across 60 loc
 - [x] Add a Mobile Apps portfolio filter and update About with the published Android work.
 - [ ] Publish these local changes through the owner's Git deployment when ready. No Composer dependencies changed.
 - Other locally developed apps await details from the owner; no iOS release or unknown framework claims are made.
+
+## Pricing page - 1 October 2026
+
+Implemented /pricing from Website_Development_Proposal_Pricing.md: six Shopify/WordPress plans, all feature rows, ten add-ons, two revision rounds, 50/50 payment terms and conditional working-day estimates. All prices are starting estimates in PKR. Quantities, precise custom work and post-handover support are confirmed in the quote; no unsupported limits or guarantees were invented. Optional Standard WooCommerce features are separately quoted.
+
+Plan links use an allowlisted plan ID and matching service topic to prefill an editable inquiry message. The package name and starting price are sent through the existing message field; no SMTP changes or payments were introduced. Added main navigation, footer and relevant service-page links. Pricing CSS only loads on /pricing; comparisons work without JavaScript. Existing route handling supplies canonical metadata, breadcrumbs and sitemap inclusion.
+
+Pricing verification: 557 full-site checks across 62 pages and 23 focused pricing checks passed. All six package links select the correct topic and fill the editable message; malformed/mismatched plan IDs are ignored. Expanded tables fit within their scroll regions at 320-1440px, desktop header fits from 1101px, and plans work without JavaScript. Local mobile Lighthouse: performance 100, accessibility 100, best practices 100. Screenshot reviewed; PHP syntax and whitespace checks passed. No emails sent, dependencies changed or live deployment performed.
