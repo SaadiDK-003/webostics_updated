@@ -1,6 +1,13 @@
 <?php
 function icon(string $name): string {
  $paths = [
+ 'mobile'=>'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/>',
+ 'catalog'=>'<path d="m12 2 8 4.5v10L12 21l-8-4.5v-10L12 2Zm-8 4.5 8 4.5 8-4.5M12 11v10M8 4.25l8 4.5v4.5"/>',
+ 'store-growth'=>'<path d="M3 21V5m0 16h18M7 17v-4m5 4V9m5 8v-6M7 8l5-5 5 4 4-5m-4 0h4v4"/>',
+ 'cart'=>'<path d="M2 3h3l3 12h11l3-9H6m2 9-1 3h12"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/>',
+ 'bag'=>'<path d="M5 7h14l1 14H4L5 7Z"/><path d="M9 8V5a3 3 0 0 1 6 0v3m-6 5 2 2 4-4"/>',
+ 'payment'=>'<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20M6 15h3m4 0h2"/>',
+ 'dashboard'=>'<rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20M8 8v13m4-9h6m-6 4h3M5 5.5h.01m3 0h.01"/>',
  'code'=>'<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/>',
  'shop'=>'<path d="M4 9h16l-2-6H6L4 9Zm1 0v12h14V9M9 21v-7h6v7M4 9c0 4 4 4 4 0 0 4 4 4 4 0 0 4 4 4 4 0 0 4 4 4 4 0"/>',
  'layout'=>'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/>',
@@ -22,10 +29,10 @@ function courseCard(array $course): void { global $categories; ?><article class=
 function cta(): void { ?><section class="container closing-cta"><div><span class="eyebrow">YOUR NEXT CHAPTER</span><h2>Have an idea?<br>Let’s make it happen.</h2></div><div><p>Get help building it. Or learn how to build it yourself.</p><div class="button-row"><?php button('Hire Webostics','contact?type=service'); button('Start learning','courses','light'); ?></div></div></section><?php }
 function faq(array $items): void { ?><div class="faq"><?php foreach ($items as [$q,$a]): ?><details><summary><?= e($q) ?><span aria-hidden="true">+</span></summary><p><?= e($a) ?></p></details><?php endforeach ?></div><?php }
 function pageHero(string $eyebrow,string $title,string $description): void { ?><header class="page-hero container"><span class="eyebrow"><?= e($eyebrow) ?></span><h1><?= e($title) ?></h1><p><?= e($description) ?></p></header><?php }
-function projectCard(array $project): void {
+function projectCard(array $project, bool $hidden = false): void {
     $hasImage = !empty($project['image']) && !empty($project['imageWidth']) && !empty($project['imageHeight']);
     ?>
-    <article class="project-card" id="project-<?= e($project['slug']) ?>">
+    <article class="project-card" id="project-<?= e($project['slug']) ?>" data-platform="<?= e($project['category']) ?>" <?= $hidden ? 'hidden' : '' ?>>
       <?php if ($hasImage): ?>
         <div class="project-image"><img src="<?= e(url($project['image'])) ?>" alt="<?= e($project['title']) ?> website preview" width="<?= (int)$project['imageWidth'] ?>" height="<?= (int)$project['imageHeight'] ?>" loading="lazy" decoding="async"></div>
       <?php else: ?>

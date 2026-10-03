@@ -159,3 +159,56 @@ Implemented /pricing from Website_Development_Proposal_Pricing.md: six Shopify/W
 Plan links use an allowlisted plan ID and matching service topic to prefill an editable inquiry message. The package name and starting price are sent through the existing message field; no SMTP changes or payments were introduced. Added main navigation, footer and relevant service-page links. Pricing CSS only loads on /pricing; comparisons work without JavaScript. Existing route handling supplies canonical metadata, breadcrumbs and sitemap inclusion.
 
 Pricing verification: 557 full-site checks across 62 pages and 23 focused pricing checks passed. All six package links select the correct topic and fill the editable message; malformed/mismatched plan IDs are ignored. Expanded tables fit within their scroll regions at 320-1440px, desktop header fits from 1101px, and plans work without JavaScript. Local mobile Lighthouse: performance 100, accessibility 100, best practices 100. Screenshot reviewed; PHP syntax and whitespace checks passed. No emails sent, dependencies changed or live deployment performed.
+
+## Instant project filters - 3 October 2026
+
+Project category links now filter the existing card list in the browser. All cards are rendered once; the requested server-side filter hides unmatched cards before JavaScript runs. Filter changes use pushState, update the active link/count and robots metadata, and restore on popstate. Ordinary links remain usable without JavaScript and with modified/new-tab clicks. The projects-only script introduces no dependency or API request.
+
+Verification: 20 focused browser checks passed, including all categories, zero document requests during filter clicks, a retained document sentinel, direct filtered loads, Back/Forward, unknown categories, modified clicks, screen-reader status and no-JavaScript behavior. Changed PHP/JS files passed syntax checks. This enhancement covers project filters; navigation between separate content pages remains server-rendered. No live deployment performed.
+
+## Persistent pricing navigation - 3 October 2026
+
+Replaced the pricing page's static jump-link row with a compact sticky native details control below the site header. Its overlay menu links to Shopify, WordPress, add-ons, scope/payment and questions without document navigation. The current section is highlighted during scrolling; section offsets keep headings below the header/control. The menu closes after selecting a section, on outside click or Escape (restoring summary focus). Header height is measured for responsive offsets. No dependencies; navigation remains usable without JavaScript.
+
+Verification: 52 focused browser checks passed at 320, 375 and 1440px, covering every destination, retained document identity, visible sticky position, correct active section, no horizontal overflow, Escape and no-JavaScript operation. Mobile screenshot reviewed. This is a local change awaiting the owner's Git deployment.
+
+## Corrected pricing shortcut - 3 October 2026
+
+Following the owner's visual clarification, restored the original in-flow pricing tabs. Replaced the sticky navigator with a compact fixed bottom-right Sections button, shown only when the original tabs have scrolled above the visible area beneath the header. The button opens a vertical set of rounded section links in the site's green/lime style. It hides and closes again when the original tabs return to view. Anchor links retain no-reload navigation and current-section indication; original tabs remain usable without JavaScript.
+
+Verification: 37 focused checks passed at 320, 375 and 1440px, including initial hidden state, appearance after scrolling, all five destinations, panel bounds, Escape, returning to top, no overflow and no-JavaScript fallback. Mobile screenshot reviewed. This supersedes the previous sticky navigation design.
+
+## Pricing shortcut visual refinement - 3 October 2026
+
+Replaced font-dependent menu/arrow symbols with fixed 18px inline SVG icons. Number badges now use explicit 32px circles and centered SVG text; labels and badges share a consistent grid. Standardized button height, line heights and panel spacing, leaving room for shadows to avoid clipping. Labels retain accessible names while decorative numbers/icons are hidden from assistive technology. Navigation behavior is unchanged and 37 focused checks passed. No additional network assets or dependencies introduced.
+Final local pricing audit after shortcut refinement: Lighthouse performance 100 and accessibility 100. Settled mobile/desktop screenshots captured after the chevron transition; navigation checks rerun successfully. These measurements apply to the local pricing page, not a new live deployment.
+
+## Site-wide back-to-top - 3 October 2026
+
+Added an accessible 48px floating up-arrow button on every page. It appears after 400px of scrolling, returns smoothly to the top without navigation, respects reduced motion, and restores keyboard focus to the header brand. On Pricing it sits beside the Sections control with a separate touch target. Hidden during the mobile drawer and when printing. The existing footer anchor remains the no-JavaScript fallback.
+
+Verification: 22 focused Chrome checks passed across 320, 375 and 1440px on home/pricing, covering visibility, no shortcut overlap, preserved document identity, focus restoration and reduced-motion instant scrolling. Mobile screenshot reviewed; PHP and JavaScript syntax checks passed. Local changes only.
+
+## Distinct service icons - 3 October 2026
+
+Removed duplicate service icon assignments. Mobile applications use a phone, Magento a catalog/package, BigCommerce a growth chart, WooCommerce a cart, Shopify a shopping bag, e-commerce a payment card, and web applications a dashboard. All 16 services now have distinct symbolic SVG artwork with the same stroke, icon-box styling and rendered dimensions. These are service illustrations, not claimed official platform logos. Inline SVG adds no external asset requests. PHP lint passed; all 16 rendered icons are unique; desktop/mobile layout and 23px sizing checks passed. Desktop grid screenshot reviewed. Shared cards update the homepage too.
+
+## Mobile navigation movement fix - 3 October 2026
+
+Prevented the mobile navigation's unenhanced layout flashing before the deferred script initializes: an early HTML class lets CSS hide and position the drawer before first paint, while actual no-JavaScript navigation remains available. Cross-document drawer links now leave the current layout stable instead of closing, unlocking scroll and refocusing the toggle before navigation. Same-document links still close the drawer. BFCache restoration resets menu state without a closing animation. Touch devices no longer get the button hover translate effect.
+
+Drawer visibility is immediate on opening while its transform still animates; focus is placed synchronously after layout so the Close control and Tab wrap are reliable. Verified 9 mobile loading/navigation checks (including blocked main JavaScript and equal before/after header position) and 12 drawer checks. All 21 passed in Chrome at mobile/tablet emulated widths. PHP/JS syntax and whitespace checks passed. Physical-device/live testing remains for after deployment; local changes only.
+
+## Service checklist marker fix - 3 October 2026
+
+The later .prose li padding rule overrode .check-list li spacing, causing checkmarks to overlap the first character. Added explicit checklist specificity, removed inherited list padding, and replaced the font glyph with a CSS-embedded SVG check. Checklist text is 15px with 28px marker space and consistent line height. Six browser checks passed at 320, 375 and 1440px for marker clearance and no overflow; mobile screenshot reviewed. Shared checklist styling fixes service pages and other checklists without additional network requests.
+
+## About profile enrichment - 3 October 2026
+
+Owner supplied https://portfolio.webostics.com/ as a source for his background. Read its public page and added concrete Shopify (Liquid, JSON templates, sections/blocks, metafields, AJAX cart), WordPress/WooCommerce and Figma implementation details to About, plus a source link and a concise working process. Retained the independently owner-confirmed mobile project/stack. Did not import counters, testimonials or conversion-result claims. PHP lint and local About response checks passed. Local changes only.
+
+## In-site developer profile - 3 October 2026
+
+Replaced the old-portfolio referral with a dedicated About profile using the owner's supplied portrait (copied unchanged into assets/team/saad-ahmad.png). Added a first-person introduction, three capability cards, a working-process section and current internal links to Co-Museum and the School Van Tracking mobile portfolio record. Retained LinkedIn and project inquiry actions, and linked learners to the real free HTML lesson. About styling loads only on that page; portrait dimensions are explicit. The old portfolio domain is no longer linked from the About page.
+
+Validation: PHP lint passed; 16 browser checks across 320, 375, 768 and 1440px passed for overflow, loaded portrait, current project links and removal of the old domain link. Desktop profile screenshot reviewed. Local change awaiting deployment.

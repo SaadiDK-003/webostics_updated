@@ -1,4 +1,21 @@
 ﻿(() => {
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    let topUpdatePending = false;
+    const updateTopButton = () => {
+      topUpdatePending = false;
+      backToTop.hidden = window.scrollY < 400;
+    };
+    window.addEventListener('scroll', () => {
+      if (!topUpdatePending) { topUpdatePending = true; requestAnimationFrame(updateTopButton); }
+    }, {passive: true});
+    window.addEventListener('pageshow', updateTopButton);
+    backToTop.addEventListener('click', () => {
+      document.querySelector('.site-header .brand')?.focus({preventScroll: true});
+      window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    });
+    updateTopButton();
+  }
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#navigation');
   if (toggle && nav) {
@@ -39,7 +56,9 @@
       backdrop.hidden = false;
       toggle.setAttribute('aria-expanded', 'true');
       background.forEach(element => { element.inert = true; });
-      requestAnimationFrame(() => { if (open) dismiss.focus({preventScroll: true}); });
+      // Resolve visibility and focus during the activation event, before any scroll.
+      drawer.getBoundingClientRect();
+      dismiss.focus({preventScroll: true});
     });
     dismiss.addEventListener('click', () => close(true));
     backdrop.addEventListener('click', () => close(true));
@@ -54,7 +73,19 @@
         else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
       }
     });
-    nav.addEventListener('click', event => { if (event.target.closest('a')) close(true); });
+    nav.addEventListener('click', event => {
+      const link = event.target.closest('a');
+      if (!open || !link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const destination = new URL(link.href);
+      // Leave the current drawer stable while a different document loads.
+      if (destination.origin === location.origin && destination.pathname === location.pathname && destination.search === location.search) close(false);
+    });
+    window.addEventListener('pageshow', event => {
+      if (!event.persisted) return;
+      drawer.classList.add('menu-reset');
+      close();
+      requestAnimationFrame(() => requestAnimationFrame(() => drawer.classList.remove('menu-reset')));
+    });
     desktop.addEventListener('change', () => {
       const wasOpen = open;
       close();

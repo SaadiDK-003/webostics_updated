@@ -5,4 +5,5 @@
 <div><h2>Learn</h2><a href="<?= e(url('courses')) ?>">Course outlines</a><a href="<?= e(url('ai')) ?>">AI learning</a><a href="<?= e(url('devops')) ?>">DevOps & deployment</a><a href="<?= e(url('resources')) ?>">Free resources</a></div>
 <div><h2>Connect</h2><a href="<?= e(url('about')) ?>">About Webostics</a><a href="<?= e(url('contact')) ?>">Contact</a><a href="<?= e($linkedin) ?>" rel="noopener noreferrer" target="_blank">Saad on LinkedIn ↗</a><a href="<?= e(url('privacy')) ?>">Privacy</a></div>
 </div><div class="container footer-bottom"><span>© <?= date('Y') ?> Webostics. Build. Learn. Launch.</span><span>Made for the next thing you build.</span><a href="#home">Back to top ↑</a></div></footer>
+<button class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>
 </body></html>

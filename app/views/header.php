@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= e($page[0]) ?></title>
 <meta name="description" content="<?= e($page[1]) ?>">
@@ -25,9 +26,11 @@
 <link rel="preload" href="<?= e(url('assets/fonts/space-grotesk-latin.woff2')) ?>" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
 <?php if (in_array($page[2], ['home', 'projects', 'project'], true)): ?><link rel="stylesheet" href="<?= e(asset('css/projects.css')) ?>"><?php endif ?>
+<?php if ($page[2] === 'about'): ?><link rel="stylesheet" href="<?= e(asset('css/about.css')) ?>"><?php endif ?>
 <?php if ($page[2] === 'lesson'): ?><link rel="stylesheet" href="<?= e(asset('css/lesson.css')) ?>"><?php endif ?>
-<?php if ($page[2] === 'pricing'): ?><link rel="stylesheet" href="<?= e(asset('css/pricing.css')) ?>"><?php endif ?>
+<?php if ($page[2] === 'pricing'): ?><link rel="stylesheet" href="<?= e(asset('css/pricing.css')) ?>"><script src="<?= e(asset('js/pricing.js')) ?>" defer></script><?php endif ?>
 <script src="<?= e(asset('js/script.js')) ?>" defer></script>
+<?php if ($page[2] === 'projects'): ?><script src="<?= e(asset('js/projects.js')) ?>" defer></script><?php endif ?>
 <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP) ?></script>
 </head>
 <body id="home">
