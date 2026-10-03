@@ -212,3 +212,10 @@ Owner supplied https://portfolio.webostics.com/ as a source for his background. 
 Replaced the old-portfolio referral with a dedicated About profile using the owner's supplied portrait (copied unchanged into assets/team/saad-ahmad.png). Added a first-person introduction, three capability cards, a working-process section and current internal links to Co-Museum and the School Van Tracking mobile portfolio record. Retained LinkedIn and project inquiry actions, and linked learners to the real free HTML lesson. About styling loads only on that page; portrait dimensions are explicit. The old portfolio domain is no longer linked from the About page.
 
 Validation: PHP lint passed; 16 browser checks across 320, 375, 768 and 1440px passed for overflow, loaded portrait, current project links and removal of the old domain link. Desktop profile screenshot reviewed. Local change awaiting deployment.
+# Developer Library — October 3, 2026
+
+- Reviewed the public Developers Library repository and representative front-end, PHP/Laravel, Magento, Git and WP-CLI notes.
+- Added `/resources/developers-library`: six topic groups, original practice tasks, repository links and current official documentation references. Preserved the README contributor credit; described the repository as reference notes, not a finished course.
+- Linked the new page from Resources, Courses and About. Included page metadata and automatic sitemap entry. Page-specific CSS only; no additional JavaScript, fonts or dependencies.
+- Verified PHP syntax, mobile/desktop widths (320, 375, 768, 1440), topic anchors, discovery links, canonical URL, sitemap inclusion and no-JavaScript content. All 17 focused browser checks passed; inspected desktop and mobile screenshots.
+- Ready locally for the owner's next deployment. No live files or repository source content changed.

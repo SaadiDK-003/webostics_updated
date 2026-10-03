@@ -53,6 +53,7 @@ $projects = array_values(array_filter(
  fn(array $project): bool => $project['published'] === true
 ));
 $resources = [
+ 'developers-library'=>['Developer Library: notes to build with','Explore front-end, PHP, Laravel, e-commerce and Git references, with small practice tasks to turn reading into working code.','FREE DEVELOPER REFERENCES',[]],
  'domain-hosting'=>['Domains, DNS & hosting: what goes where?','A plain-language guide to the parts that make a website reachable.','LAUNCH NOTES',[
   ['A domain is the address','Your domain is the name people use to reach a site. Registration gives you control of that name for the registration period; it does not automatically provide a website or mailbox.'],
   ['Hosting runs or serves the website','Hosting provides the environment for your files and application. A static website and a PHP application have different requirements. List your runtime, database and storage needs before selecting an environment.'],
@@ -92,6 +93,7 @@ foreach ($services as $slug=>$s) $pages['services/'.$slug]=[$s[0].' | Webostics'
 foreach ($categories as $slug=>$name) $pages['courses/'.$slug]=[$name.' Learning Path | Webostics','Explore the planned '.$name.' learning path, practical project ideas and course outlines at Webostics.','category'];
 foreach ($courses as $slug=>$c) $pages['courses/'.$slug]=[$c['title'].' | Webostics',$c['description'].' View the planned outline and inquire about availability.','course'];
 foreach ($resources as $slug=>$r) $pages['resources/'.$slug]=[$r[0].' | Webostics',$r[1],'resource'];
+$pages['resources/developers-library'][2] = 'library';
 $pages['courses/html/first-page'] = ['Build Your First HTML Page: Free Practice Lesson | Webostics','Learn HTML document structure, edit a starter page in a sandboxed preview, and download your own introduction page. Free practice with no account required.','lesson'];
 $pages['courses/html/links-and-navigation'] = ['HTML Links & Navigation: Free Practice Lesson | Webostics','Build a two-page HTML project. Practice relative paths, descriptive links, page fragments and keyboard navigation with free downloadable starter files.','lesson'];
 

@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>">
 <?php if (in_array($page[2], ['home', 'projects', 'project'], true)): ?><link rel="stylesheet" href="<?= e(asset('css/projects.css')) ?>"><?php endif ?>
 <?php if ($page[2] === 'about'): ?><link rel="stylesheet" href="<?= e(asset('css/about.css')) ?>"><?php endif ?>
+<?php if ($page[2] === 'library'): ?><link rel="stylesheet" href="<?= e(asset('css/library.css')) ?>"><?php endif ?>
 <?php if ($page[2] === 'lesson'): ?><link rel="stylesheet" href="<?= e(asset('css/lesson.css')) ?>"><?php endif ?>
 <?php if ($page[2] === 'pricing'): ?><link rel="stylesheet" href="<?= e(asset('css/pricing.css')) ?>"><script src="<?= e(asset('js/pricing.js')) ?>" defer></script><?php endif ?>
 <script src="<?= e(asset('js/script.js')) ?>" defer></script>
